@@ -5,6 +5,7 @@ body {
     max-width: 650px;
     line-height: 1.6;
     font-size: 18px;
+    background: #FAFAFA;
     color: #444;
     padding: 0 10px
     font-family: Verdana, sans-serif;
@@ -12,4 +13,12 @@ body {
 
 h1,h2,h3 {
     line-height: 1.2
+}
+
+a {
+    color: #07a;
+}
+
+a:visited {
+    color: #941352;
 }
