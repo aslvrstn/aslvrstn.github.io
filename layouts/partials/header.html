@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" />
+    {{ partial "head_custom.html" . }}
+    <!-- Yea, I know. I'm too curious about who's showing up. -->
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+    <hr/>
+    </nav>
