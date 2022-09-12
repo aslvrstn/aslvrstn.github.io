@@ -11,6 +11,17 @@
     <!-- Yea, I know. I'm too curious about who's showing up. -->
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/google_analytics_async.html" . }}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
   </head>
 
   <body>
