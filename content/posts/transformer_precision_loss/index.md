@@ -11,4 +11,17 @@ Here's the setup: Generate a $d$-long feature vector $\vec{v}$ of all ones, exce
 
 Here's a plot of what that looks like when using various floating point types:
 
-![Floating point rotation loss](images/rotational_loss.png)
+![Graph of floating point rotation loss](images/rotational_loss.png)
+
+If this is right, we hit 1% error on a ``bfloat16`` when the features span only a single order of magnitude! Here's a table of the orders of magnitude before hitting 1% error for various types:
+
+| fp type | OOM |
+| ------- | --- |
+| t.bfloat16 | 1 |
+| np.float16 | 3 |
+| t.float32 | 5 |
+| t.float64 | 5 |
+| np.float32 | 6 |
+| np.float64 | 14 |
+
+
