@@ -1,7 +1,6 @@
 ---
 title: "Precision Loss in Transformers"
 date: 2022-09-12T18:00:27-04:00
-draft: true
 math: true
 ---
 
