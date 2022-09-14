@@ -31,7 +31,7 @@ A great question is "what's going on with pytorch's ``t.float32`` and ``t.float6
 
 This got me wondering about how much this might be occuring in practice and I tried to find papers discussing typical features magnitudes. [LLM.int8()](https://arxiv.org/abs/2208.07339) talks about this a bit and seems to come up with large outlier features of around magnitude 50. I don't see discussion of the size of small features, so it's tough to gauge the orders of magnitude involved, but unless there are features down around 0.0001 (unlikely?) then maybe this isn't a big deal in practice for ``float32`` precision and up. Or maybe this is a nice story about why we don't see larger features (also unlikely?)
 
-As promised earlier, here's the code to replicate:
+As promised earlier, here's the code to replicate, though there's a slightly updated version living [in this repo](https://github.com/aslvrstn/mlscratchpad/blob/main/lossy_rotations.py).
 
 ```Python
 import numpy as np
