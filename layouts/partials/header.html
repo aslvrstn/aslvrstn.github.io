@@ -12,6 +12,7 @@
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/google_analytics_async.html" . }}
 
+    {{ if .Params.math}}
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
@@ -22,6 +23,7 @@
             });
         });
     </script>
+    {{ end }}
   </head>
 
   <body>
