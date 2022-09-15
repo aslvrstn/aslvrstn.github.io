@@ -1,0 +1,11 @@
+baseURL: http://aslvrstn.com/
+languageCode: en-us
+title: aslvrstn.com
+theme: xmin
+googleAnalytics: UA-155390347-1
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
