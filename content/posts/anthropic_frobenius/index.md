@@ -1,8 +1,7 @@
 ---
 title: "Composition Measures in Transformers"
-date: 2022-09-11T14:46:24-07:00
+date: 2022-09-14T14:46:24-07:00
 math: true
-draft: true
 ---
 
 ## Induction Heads
@@ -12,16 +11,13 @@ I was recently working on a project to try to understand how induction heads for
 
 ## Measuring Composition
 
-A good portion of _A Mathematical Framework_ is devoted to investigating how this composition happens. It describes three kinds of composition, Q-Composition, K-Composition, and V-Composition, when $W_Q$, $W_K$, and $W_V$ respectively read in a subspace affected by a previous head. It goes on to describe a way of measuring the amount of composition. For Q-Composition the measure they choose is
-
-TODO: What's broken about this denominator??
-$$ \frac{{||W_{QK}^{h_2T} W_{OV}^{h_1} ||}_F}{ {||W||}_F } $$
-
-K- and V-composition have similar structures, with correspondingly different matrices. But all are of the form:
+A good portion of _A Mathematical Framework_ is devoted to investigating how this composition happens. It describes three kinds of composition, Q-Composition, K-Composition, and V-Composition, when $W_Q$, $W_K$, and $W_V$ respectively read in a subspace affected by a previous head. It goes on to describe a way of measuring the amount of composition. In each case, the measure is of the form:
 
 $$ \frac{{||AB||}_F}{{||A||}_F{||B||}_F}$$
 
 where ${||A||}_F$ is the Frobenius norm. The intent of this measure is to capture the amount that $A$ reads in information from the output of $B$.
+
+For Q-Composition $A = W_{QK}^{h_2T}$ and $B = W_{OV}^{h_1}$. K- and V-composition have similar structures, with correspondingly different matrices.
 
 
 ## Scores in Practice
