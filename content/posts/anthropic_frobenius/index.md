@@ -32,11 +32,13 @@ This is already a bit unsatisfying to me, though. I really want heads whose only
 
 This is where I started going a bit nuts trying to understand things. Because when I plotted this graph, I got
 
-TODO: Drop in image!!
+![Graph of large K-composition score then dropoff](images/Kcomposition.png)
 
 What??
 
-OK, so it's somewhat unsatisfying if induction heads don't have K-composition scores near one. It's much more unsatisfying if they don't have scores near one while random stuff that happens early on in training _does_ get a score of one.
+For context, induction heads form between steps 700-800 in this training run.
+
+OK, so it's somewhat unsatisfying if induction heads don't have K-composition scores near one. It's much more unsatisfying if they don't have scores near one _and_ random stuff that happens early on in training _does_ get a score of one.
 
 So I started trying to understand this measure a bit better.
 
@@ -50,8 +52,6 @@ Next, what does it mean to "read/write to the same space"? My intuition is that 
 Nope! For a $d$-dimensional identity matrix, ${||I||}_F = \sqrt{d}$, and ${||II||}_F = {||I||}_F$, so this measure comes out to $d^{-\frac{1}{2}}$. Extra gross! This thing isn't even dimension-invariant!
 
 So how do you even get this thing to one then? This measures one when $A$ is a rank-1 matrix of constant rows, and $B$ is a rank-1 matrix of constant columns.
-
-TODO: Is the above the most general form?? Can they both just be rank 1??
 
 By the way, other matrix norms _do_ have the property that this measure will come out to one for the identity matrix, but they seem to all have other weird properties, like only measuring the maximum direction in which the two matrices are operating.
 
