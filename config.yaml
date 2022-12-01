@@ -9,6 +9,9 @@ menu:
     - name: Home
       url: ""
       weight: 1
+    - name: Stuff
+      url: /stuff_i_like
+      weight: 2
     - name: Contact
       url: /contact
-      weight: 2
+      weight: 3
