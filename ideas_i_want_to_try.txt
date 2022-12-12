@@ -1,3 +1,0 @@
-Ideas I want an excuse to try some time:
-
-- shamemap: https://news.ycombinator.com/item?id=23424116 Consider a texture map just like, a precomputed data cache. You can encode pretty much anything in them. Why, in the gritty gore and carrion filled trenches, I've created systems where artists can use maps to annotate parts of models they think suck. That map was used in a camera AI system that tried to avoid looking at parts artists are ashamed of, adjust depth of field threshholds depending on the depth of bad stuff... That kind of thing. (That texture seam is too gross for the sizzle cinematic, there's NO TIME to fix it. Just smudge the camera, or have it lose focus as it sweeps through! shameMap.png to the rescue). 
