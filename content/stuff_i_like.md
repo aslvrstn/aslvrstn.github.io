@@ -14,6 +14,8 @@ This is a massive WIP right now, so I recognize that it appears slightly derange
   - Yes I like this more than Everything Everywhere
 - Mad Max, Fury Road
 - Spider-Man: Into the Spider-Verse
+- One Cut of the Dead
+  - Go in completely blind and don't you dare quit on it because it's "challenging"
 - To All the Boys I've Loved Before
 
 
