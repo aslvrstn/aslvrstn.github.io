@@ -4,6 +4,11 @@ date: 2022-09-12T18:00:27-04:00
 math: true
 ---
 
+## Update!
+I believe this has been very solidly refuted by Anthropic's paper, [Privileged Bases in the Transformer Residual Stream](https://www.anthropic.com/index/privileged-bases-in-the-transformer-residual-stream). The TL;DR is that the privileged basis is almost certainly the result of normalization in the Adam optimizer. As I say over [here](https://aslvrstn.com/posts/lsp_complaints/), [it is known](https://meta.wikimedia.org/wiki/Cunningham%27s_Law) that the best way to get a right answer is to write the wrong answer on the stalls in the CS department and wait for someone to correct you. I'm thrilled that Nelson, Robert, and Chris did all the hard work and better tests _and_ that I now get to call them coworkers.
+
+## Original Post
+
 I was talking to [Neel Nanda](https://twitter.com/NeelNanda5) the other day and he claimed that there seems to exist some sort of regularization such that transformers favor the standard basis for features. I wondered whether this might be due to floating point roundoff when features are of very different magnitudes. As he does, he ran off and had an experiment rigged up like thirty minutes later showing that it's plausible. I reproduced his experiment to try to clear up some confusion I still had around this, but it does in fact seem like a plausible story.
 
 Here's the setup: Generate a $d$-long feature vector, $\vec{v}$, of all ones, except with the first value as $k$ orders of magnitude larger than the rest, e.g. $[1e8, 1, 1, 1]$. Generate a random $d \times d$ rotation matrix, $\mathbf{R}$. Rotate $\vec{v}$ by $\mathbf{R}$ and then back by $\mathbf{R}^\intercal$. We should recover $\vec{v}$, but in practice we'll see some changes to the small values due to floating point roundoff when the small features get mushed together into being co-represented by the same floating point value as the large features.
